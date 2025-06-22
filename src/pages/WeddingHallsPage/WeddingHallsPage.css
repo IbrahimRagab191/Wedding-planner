@@ -1,0 +1,142 @@
+.wedding-halls-page {
+    padding: 100px 0;
+    background-color: var(--light);
+    min-height: 100vh;
+  }
+  
+  .wedding-halls-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .section-title h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--dark);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+  }
+  
+  .section-title p {
+    color: var(--text);
+    font-size: 1.1rem;
+  }
+  
+  /* Filters */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+  }
+  
+  .filter-bar select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: var(--dark);
+    cursor: pointer;
+  }
+  
+  /* Gallery Grid */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  /* Card Styles */
+  .card {
+    background: var(--secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #ddd;
+    transition: 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img {
+    height: 220px;
+    overflow: hidden;
+  }
+  
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .card:hover .card-img img {
+    transform: scale(1.05);
+  }
+  
+  .card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary);
+    color: white;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+  
+  .card-rating {
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+  }
+  
+  .card-desc {
+    color: var(--text);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  .card-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary);
+    background-color: rgba(212, 163, 115, 0.1);
+    padding: 8px 16px;
+    border-radius: 30px;
+    display: inline-block;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .filter-bar {
+      justify-content: center;
+    }
+  }
+a.card {
+  text-decoration: none;
+}

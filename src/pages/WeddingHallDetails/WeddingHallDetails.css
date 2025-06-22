@@ -1,0 +1,53 @@
+.hall-details {
+    padding: 100px 0;
+    background-color: var(--light);
+}
+
+.hall-details .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hall-image img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.hall-info h1 {
+    font-size: 2.5rem;
+    color: var(--dark);
+}
+
+.hall-info .rating {
+    color: var(--primary);
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.hall-info .location,
+.hall-info .description,
+.hall-info .price {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+.reserve-btn {
+    padding: 12px 30px;
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.reserve-btn:hover {
+    background-color: #b87e4d;
+}
+  

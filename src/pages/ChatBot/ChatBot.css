@@ -1,0 +1,113 @@
+/* هيكل الصفحة بالكامل */
+.page-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* المنطقة الوسطى فقط تاخد المساحة الباقية */
+.chatbot-page {
+  flex: 1;
+  background-color: #fffaf5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* الشات نفسه */
+.chat-container {
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(212, 163, 115, 0.2);
+}
+
+
+.chat-message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.chat-message.bot {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.chat-message.user {
+  justify-content: flex-end;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  margin: 0 10px;
+}
+
+.bubble {
+  background-color: #fef4ea;
+  border-radius: 15px;
+  padding: 12px 18px;
+  max-width: 70%;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.chat-message.user .bubble {
+  background-color: #d4a373;
+  color: white;
+}
+
+.chat-input {
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 12px 16px;
+  border: 1px solid #d4a373;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.chat-input input:focus {
+  border-color: #b17842;
+}
+
+.chat-input button {
+  padding: 12px 24px;
+  background-color: #d4a373;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-input button:hover {
+  background-color: #c28c5e;
+}
+
+.chat-input button:disabled {
+  background-color: #f3e6d8;
+  cursor: not-allowed;
+}

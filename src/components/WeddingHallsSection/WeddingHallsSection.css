@@ -1,0 +1,211 @@
+.wedding-halls-section {
+    padding: 100px 0;
+    background-color: #eee;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--dark);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary);
+}
+
+.section-title p {
+    max-width: 700px;
+    margin: 20px auto 0;
+    color: var(--text);
+    font-size: 1.1rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: var(--secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.card-img {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 25px;
+    position: relative;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--dark);
+    position: relative;
+}
+
+.card-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.card:hover .card-title::after {
+    width: 100px;
+}
+
+.card-rating {
+    color: var(--primary);
+    font-size: 1rem;
+    margin: 15px 0;
+    letter-spacing: 2px;
+}
+
+.card-desc {
+    color: var(--text);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.card-price {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark);
+    padding: 8px 20px;
+    background: rgba(212, 163, 115, 0.1);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-price {
+    background: var(--primary);
+    color: white;
+}
+
+.card-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: var(--secondary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .section-title h2 {
+    font-size: 2.5rem;
+    }
+
+    .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .wedding-halls-section {
+    padding: 70px 0;
+    }
+
+    .section-title h2 {
+    font-size: 2.2rem;
+    }
+
+    .card-img {
+    height: 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title h2 {
+    font-size: 2rem;
+    }
+
+    .gallery {
+    grid-template-columns: 1fr;
+    }
+}
+.see-more-wrapper {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .see-more-btn {
+    padding: 12px 30px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .see-more-btn:hover {
+    background-color: #c08c5e;
+    transform: translateY(-3px);
+  }
+  .card-tags {
+    margin-top: 0.5rem;
+  }
+  .tag {
+    display: inline-block;
+    background-color: #eee;
+    color: #333;
+    padding: 4px 8px;
+    margin: 0 4px 4px 0;
+    border-radius: 12px;
+    font-size: 0.75rem;
+  }
+  

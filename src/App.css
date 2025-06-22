@@ -1,0 +1,18 @@
+:root {
+    --primary: #d4a373;
+    --secondary: #ffffff;
+    --dark: #2a2a2a;
+    --light: #f9f9f9;
+    --text: #555;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(to right, #f9f9f9, #fef6ef);
+}
