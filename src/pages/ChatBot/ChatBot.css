@@ -1,11 +1,10 @@
-/* هيكل الصفحة بالكامل */
+
 .page-layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* المنطقة الوسطى فقط تاخد المساحة الباقية */
 .chatbot-page {
   flex: 1;
   background-color: #fffaf5;
@@ -15,7 +14,7 @@
   padding: 20px;
 }
 
-/* الشات نفسه */
+
 .chat-container {
   width: 100%;
   max-width: 700px;

@@ -23,12 +23,12 @@ function Login() {
       return setErrorMessage("All fields are required.");
     }
 
-    if (!isEmail(emailOrUsername) && emailOrUsername.length < 6) {
-      return setErrorMessage("Username must be at least 6 characters.");
+    if (!isEmail(emailOrUsername) && emailOrUsername.length < 3) {
+      return setErrorMessage("Username must be at least 3 characters.");
     }
 
-    if (password.length < 8) {
-      return setErrorMessage("Password must be at least 8 characters.");
+    if (password.length < 6) {
+      return setErrorMessage("Password must be at least 6 characters.");
     }
 
     dispatch(login(emailOrUsername, password));

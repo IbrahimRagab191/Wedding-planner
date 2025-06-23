@@ -5,47 +5,56 @@ import { addReservation } from "../../Redux/Action";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import "./WeddingHallDetails.css";
+import axios from "axios";
 
 function WeddingHallDetails() {
     const { id } = useParams();
     const dispatch = useDispatch();
 
-    // user info from redux
     const user = useSelector((state) => state.login.user);
 
     const [hall, setHall] = useState(null);
 
     useEffect(() => {
-        const dummyData = [
-        {
-            id: "1",
-            name: "Grand Palace Hall",
-            rating: 4,
-            price: 5000,
-            location: "Cairo",
-            badge: "Most Popular",
-            description:
-            "Majestic venue with grand ballroom and luxurious interiors perfect for royal weddings.",
-            imageUrl: "https://via.placeholder.com/600x400?text=Grand+Palace",
-            vendorEmail: "vendor1@wedding.com",      // 👈 مهم للربط مع الvendor
-            serviceType: "Wedding Hall",
-        },
-        {
-            id: "2",
-            name: "Royal Garden Hall",
-            rating: 5,
-            price: 8000,
-            location: "Giza",
-            description:
-            "Elegant outdoor venue surrounded by beautiful landscapes and modern amenities.",
-            imageUrl: "https://via.placeholder.com/600x400?text=Royal+Garden",
-            vendorEmail: "vendor2@wedding.com",
-            serviceType: "Wedding Hall",
-        },
-        ];
+        const fetchHall = async () => {
+        try {
+            const token = localStorage.getItem("token");
+            const res = await axios.get(
+            "http://localhost/route2/project/api/vendors/list.php?vendor_type=hall",
+            {
+                headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+                },
+            }
+            );
 
-        const foundHall = dummyData.find((h) => h.id === id);
-        setHall(foundHall);
+            const hallData = res.data.find((h) => h.vendor_id.toString() === id);
+
+            if (hallData) {
+            const formattedHall = {
+                id: hallData.vendor_id,
+                name: `${hallData.city} Hall`,
+                rating: 4,
+                price: Math.floor(Math.random() * 6000 + 3000),
+                location: hallData.city,
+                description: hallData.description,
+                imageUrl:
+                hallData.image_url ||
+                "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqNklVJVZDODgByvisOkg_pXC8qsY0n5BiX1fEqX43HcrHxHR4IOfM8yJ3ZBNUxNKE5M-OHJMk5pwIOK_r1HTduyR3AhowSqmaag3h2ThH6mKW8tWvg6rm8VffaGIslyGfpRKntKQ=s3072-v1",
+                vendorEmail: hallData.email,
+                serviceType: "Wedding Hall",
+            };
+            setHall(formattedHall);
+            } else {
+            setHall(null);
+            }
+        } catch (error) {
+            console.error("❌ Failed to fetch hall:", error);
+        }
+        };
+
+        fetchHall();
     }, [id]);
 
     const handleReserve = () => {
@@ -53,21 +62,18 @@ function WeddingHallDetails() {
         alert("Please log in first to reserve this hall.");
         return;
         }
-
+    
         const reservationData = {
-        hallId: hall.id,
-        hallName: hall.name,
-        vendorEmail: hall.vendorEmail,
-        userName: user.username,
-        serviceType: hall.serviceType,
-        reservedAt: new Date().toISOString(),
+        vendor: hall.name, 
+        date: new Date().toLocaleString(), 
         };
-
+    
         dispatch(addReservation(reservationData));
         alert("Reservation request sent successfully!");
     };
+    
 
-    if (!hall) return <div>Loading...</div>;
+    if (!hall) return <div>Loading or not found...</div>;
 
     return (
         <>
@@ -80,7 +86,8 @@ function WeddingHallDetails() {
             <div className="hall-info">
                 <h1>{hall.name}</h1>
                 <div className="rating">
-                {"⭐".repeat(hall.rating)}{"☆".repeat(5 - hall.rating)}
+                {"⭐".repeat(hall.rating)}
+                {"☆".repeat(5 - hall.rating)}
                 </div>
                 <p className="location">
                 <strong>Location:</strong> {hall.location}
@@ -99,4 +106,3 @@ function WeddingHallDetails() {
 }
 
 export default WeddingHallDetails;
-

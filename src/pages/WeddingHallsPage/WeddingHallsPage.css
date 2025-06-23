@@ -28,7 +28,7 @@
     font-size: 1.1rem;
   }
   
-  /* Filters */
+
   .filter-bar {
     display: flex;
     flex-wrap: wrap;
@@ -46,15 +46,14 @@
     color: var(--dark);
     cursor: pointer;
   }
-  
-  /* Gallery Grid */
+
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
   }
   
-  /* Card Styles */
+  
   .card {
     background: var(--secondary);
     border-radius: 12px;

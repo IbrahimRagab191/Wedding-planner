@@ -67,28 +67,28 @@ function Register() {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                 <div className="radio-group">
-              <label>
-                <input
-                  type="radio"
-                  name="role"
-                  value="user"
-                  checked={role === "user"}
-                  onChange={() => setRole("user")}
-                />
-                I'm a User
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="role"
-                  value="vendor"
-                  checked={role === "vendor"}
-                  onChange={() => setRole("vendor")}
-                />
-                I'm a Vendor
-              </label>
-            </div>
+                <div className="radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="role"
+                      value="user"
+                      checked={role === "user"}
+                      onChange={() => setRole("user")}
+                    />
+                    I'm a User
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="role"
+                      value="vendor"
+                      checked={role === "vendor"}
+                      onChange={() => setRole("vendor")}
+                    />
+                    I'm a Vendor
+                  </label>
+              </div>
 
             <div className="name-row">
               <div className="form-group">

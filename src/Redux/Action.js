@@ -12,7 +12,6 @@ import { ADD_RESERVATION } from "./types";
 import reservationReducer from "./reducers/reservationReducer";
 import { UPDATE_USER } from "./types";
 import { LOGOUT_REQUEST, LOGOUT_SUCCESS } from "./types";
-// ✅ Register Action
 export const register = (userData) => async (dispatch) => {
   try {
     dispatch({ type: REGISTER_REQUEST });
@@ -42,7 +41,6 @@ export const register = (userData) => async (dispatch) => {
   }
 };
 
-// ✅ Login Action 
 export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST });
@@ -76,15 +74,16 @@ export const login = (email, password) => async (dispatch) => {
   }
 };
 
-
-export const addReservation = (reservation) => {
-  return {
-    type: ADD_RESERVATION,
+export const addReservation = (reservation) => (dispatch, getState) => {
+  dispatch({
+    type: "ADD_RESERVATION",
     payload: reservation,
-    reservation: reservationReducer,
-  };
+  });
+
+  const updatedReservations = getState().reservation.reservations;
+  localStorage.setItem("reservations", JSON.stringify(updatedReservations));
 };
-// actions/viewedHallsActions.js
+
 
 export const addViewedHall = (id) => {
   return {

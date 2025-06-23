@@ -35,7 +35,7 @@ const UserInfo = () => {
         
                 if (password) updatedData.password = password;
         
-                const token = localStorage.getItem("token"); // ✅
+                const token = localStorage.getItem("token"); 
         
                 const res = await axios.post(
                 "http://localhost/route2/project/api/profile/update.php",
@@ -43,7 +43,7 @@ const UserInfo = () => {
                 {
                     headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`, // ✅ مهم جداً
+                    "Authorization": `Bearer ${token}`, 
                     },
                 }
                 );

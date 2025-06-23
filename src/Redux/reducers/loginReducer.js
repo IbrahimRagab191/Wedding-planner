@@ -1,60 +1,3 @@
-
-// import {
-//     LOGIN_REQUEST,
-//     LOGIN_SUCCESS,
-//     LOGIN_FAIL,
-//     UPDATE_USER,
-//     LOGOUT
-// } from "../types";
-
-// const initialState = {
-//     loading: false,
-//     isAuthenticated: false,
-//     user: null,
-//     error: null,
-// };
-
-// const loginReducer = (state = initialState, action) => {
-//     switch (action.type) {
-//     case LOGIN_REQUEST:
-//         return { ...state, loading: true, error: null };
-
-//     case LOGIN_SUCCESS:
-//         return {
-//         ...state,
-//         loading: false,
-//         isAuthenticated: true,
-//         user: action.payload,
-//         };
-
-//     case LOGIN_FAIL:
-//         return {
-//         ...state,
-//         loading: false,
-//         isAuthenticated: false,
-//         error: action.payload,
-//         };
-
-//     case UPDATE_USER:
-//         return {
-//         ...state,
-//         user: { ...state.user, ...action.payload },
-//         };
-
-//     case LOGOUT:
-//         return {
-//         ...state,
-//         isAuthenticated: false,
-//         user: null,
-//         loading: false,
-//         };
-
-//     default:
-//         return state;
-//     }
-// };
-
-// export default loginReducer;
 import {
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
@@ -118,4 +61,3 @@ const loginReducer = (state = initialState, action) => {
 };
 
 export default loginReducer;
-  

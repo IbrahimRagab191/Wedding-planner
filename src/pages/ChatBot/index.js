@@ -21,7 +21,6 @@ const ChatBot = () => {
     const trimmedInput = input.trim();
     if (!trimmedInput) return;
 
-    // Add user's message
     setMessages((prev) => [...prev, { type: "user", text: trimmedInput }]);
     setInput("");
     setIsTyping(true);
@@ -41,7 +40,6 @@ const ChatBot = () => {
       const data = await response.json();
       console.log("API response:", data);
 
-      // Append bot's reply
       setMessages((prev) => [
         ...prev,
         { type: "bot", text: data.response || "Sorry, I didn’t get that." },

@@ -1,12 +1,8 @@
-import { ADD_RESERVATION } from "../types";
+const initialReservations = JSON.parse(localStorage.getItem("reservations")) || [];
 
-const initialState = {
-  reservations: [], // هيكون فيها كل الحجوزات اللى عملها اليوزر
-};
-
-const reservationReducer = (state = initialState, action) => {
+const reservationReducer = (state = { reservations: initialReservations }, action) => {
     switch (action.type) {
-        case ADD_RESERVATION:
+        case "ADD_RESERVATION":
         return {
             ...state,
             reservations: [...state.reservations, action.payload],
